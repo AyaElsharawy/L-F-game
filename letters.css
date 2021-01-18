@@ -15,6 +15,16 @@ body {
     image-rendering: pixelated;
  }
  
+ .popmsg{
+      position: absolute;
+      cursor: pointer;
+      color: #000000; 
+      background-color: transparent; 
+      border: 2px solid #000000;
+      border-radius: 5px;
+      left: 320px;
+      top: 465px;
+ }
  .toy {
     cursor: pointer;
     position: absolute;
