@@ -5,6 +5,7 @@ var toy3 = document.getElementById("toy3");
 var toy4 = document.getElementById("toy4");
 var msg = document.getElementById("msg");
 var nxtbtn = document.getElementById("popup");
+var bkbtn = document.getElementById("back");
 
 var tryagain = new Audio();
 var clap = new Audio();
@@ -24,9 +25,13 @@ function right(){
 function msgout(){
    window.location.href="letters1.html";
 }
+function bkfun(){
+   location.replace('start.html');
+}
 
 toy1.addEventListener('click',right)
 toy2.addEventListener('click',wrong)
 toy3.addEventListener('click',wrong)
 toy4.addEventListener('click',wrong)
 nxtbtn.addEventListener('click',msgout)
+bkbtn.addEventListener('click',bkfun)
