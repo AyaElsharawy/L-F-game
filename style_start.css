@@ -1,0 +1,179 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  background: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+}
+.center{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.outer{
+  position: relative;
+  margin: 0 50px;
+  background: #111;
+}
+.circle{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.outer button, .outer span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.outer button{
+  background: #111;
+  color: #f2f2f2;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  z-index: 9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+.circle button{
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+}
+.outer span{
+  height: 100%;
+  width: 100%;
+  background: inherit;
+}
+.circle span{
+  border-radius: 50%;
+}
+
+.outer:hover span:nth-child(1){
+  filter: blur(14px);
+}
+.outer:hover{
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  animation: rotate 1.5s linear infinite;
+}
+@keyframes rotate {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+@media (max-width: 640px){
+  .center{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .outer{
+    margin: 50px 0;
+  }
+}
+  
+  .brand {
+    
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+    
+  }
+  .brand:before {
+    
+    background-size: 100% 100%;
+    content: "L&F";
+    line-height: 205px;
+    color: #000000;
+    font-size: 20px;
+    font-family: "HEAVITAS", "Helvetica Rounded", Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: absolute;
+    
+    z-index: 99999 !important;
+  }
+  
+  .logo{
+    animation: 5s linear infinite;
+    animation-name: rotate-0;
+    animation-delay: 0s;
+    transform-origin: 50% 50%;
+    transform: rotate(0deg);
+    
+  }
+  
+  
+  svg path{
+    positon:absolute;
+    fill:none;
+    stroke-width:2;
+    top:0;
+    left:0;
+    /*mix-blend-mode: multiply;*/
+    transform-origin: 50% 50%;
+    transform: rotate(0deg) ;
+    animation: 4s linear infinite;
+  }
+  
+  .logo svg path:nth-child(1) {
+    opacity: 1;
+    animation-name: rotate-1;
+    animation-delay: .5s;
+  }
+  .logo svg path:nth-child(2) {
+    opacity: .5;
+    animation-name: rotate-2;
+    animation-delay: .6s;
+  }
+  .logo svg path:nth-child(3) {
+    opacity: .8;
+    animation-name: rotate-3;
+    animation-delay: .7s;
+  }
+  
+  
+  @keyframes scale-1 {
+    0%{
+      transform: scale(1);
+    }50% {
+      transform: scale(.9);
+    }100% {
+      transform: scale(1);
+    } 
+  }
+  
+  @keyframes rotate-0 {
+    from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+  } 
+  
+  @keyframes rotate-1 {
+    from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+  }
+  
+  @keyframes rotate-2 {
+    from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+  }
+  
+  @keyframes rotate-3 {
+    from { transform: rotate(0deg); }
+      to { transform: rotate(0deg); }
+  }
