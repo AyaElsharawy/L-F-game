@@ -4,6 +4,7 @@ var toy2 = document.getElementById("toy2");
 var toy3 = document.getElementById("toy3");
 var toy4 = document.getElementById("toy4");
 var msg = document.getElementById("msg");
+var bkbtn = document.getElementById("back");
 
 var tryagain = new Audio();
 var clap = new Audio();
@@ -21,10 +22,14 @@ clap.src="Clap.mp3"
      clap.play();
      
   }
+function bkfun(){
+   location.replace('letters1.html');
+   }
 
 
   toy1.addEventListener('click',wrong)
   toy2.addEventListener('click',right)
   toy3.addEventListener('click',wrong)
   toy4.addEventListener('click',wrong)
+  bkbtn.addEventListener('click',bkfun)
   
