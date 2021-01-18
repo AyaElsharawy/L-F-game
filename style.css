@@ -1,84 +1,136 @@
-
-.dpad {
-   position:absolute;
-   right: calc(var(--pixel-size) * 2);
-   bottom: calc(var(--pixel-size) * 2);
-   width: calc(var(--pixel-size) * 37);
-   height: calc(var(--pixel-size) * 38);
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-.dpad-button {
-   appearance:none;
-   outline:0;
-   border:0;
-   background:transparent;
-   padding:0;
-   cursor:pointer;
+body{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
 }
-.dpad-button svg {
-   display:block;
-   height: calc(var(--pixel-size) * 13);
-}
-
-.dpad-button.pressed .Arrow_arrow-inset { stroke:#07c2cc; }
-.dpad-button.pressed .Arrow_arrow-body { stroke:#17dfea; }
-
-.dpad-up {
-   position: absolute;
-   left: calc(var(--pixel-size) * 12);
-   top:0;
-}
-.dpad-down {
-   position: absolute;
-   bottom:var(--pixel-size);
-   left: calc(var(--pixel-size) * 12);
-}
-.dpad-left {
-   position: absolute;
-   top: calc(var(--pixel-size) * 12);
-   left:0;
-}
-.dpad-right {
-   position: absolute;
-   top: calc(var(--pixel-size) * 12);
-   right:0;
+.show-btn{
+  background: -webkit-linear-gradient(right, #2eb82e, #adebad, #2eb82e, #adebad);
+  padding: 50px;
+  font-size: 50px;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+ 
 }
 
-.dpad {
-   user-select:none;
+/*.show-btn{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.show-btn1{
+    background: -webkit-linear-gradient(right, #2eb82e, #adebad, #2eb82e, #adebad);
+    padding: 50px;
+    font-size: 50px;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+   
+  }
+  
+  .show-btn1{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }*/
 
-.corner_topleft,
-.corner_topright,
-.corner_bottomleft,
-.corner_bottomright {
-   position: absolute;
-   width: var(--pixel-size);
-   height: var(--pixel-size);
-   background: var(--bg);
-   z-index:2;
-}
-
-.corner_topleft {
-   top: calc(var(--pixel-size) * -1);
-   left: calc(var(--pixel-size) * -1);
-}
-.corner_topright {
-   top: calc(var(--pixel-size) * -1);
-   right: calc(var(--pixel-size) * -1);
-}
-.corner_bottomleft {
-   bottom: calc(var(--pixel-size) * -1);
-   left: calc(var(--pixel-size) * -1);
-}
-.corner_bottomright {
-   bottom: calc(var(--pixel-size) * -1);
-   right: calc(var(--pixel-size) * -1);
-}
-
-.headline {
-   position:absolute;
-   top:calc(var(--pixel-size) * 2);
-   right:calc(var(--pixel-size) * 2);
-   width: calc(var(--pixel-size) * 75)
-}
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+  }
+  .center{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .outer{
+    position: relative;
+    margin: 0 50px;
+    background: #111;
+  }
+  .circle{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+  }
+  .outer button, .outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .outer button{
+    background: #111;
+    color: #f2f2f2;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    z-index: 9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  
+  .circle button{
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+  }
+  .outer span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+  }
+  .circle span{
+    border-radius: 50%;
+  }
+  
+  .outer:hover span:nth-child(1){
+    filter: blur(14px);
+  }
+  .outer:hover{
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    animation: rotate 1.5s linear infinite;
+  }
+  @keyframes rotate {
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+  }
+  @media (max-width: 640px){
+    .center{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .outer{
+      margin: 50px 0;
+    }
+  }
+  
